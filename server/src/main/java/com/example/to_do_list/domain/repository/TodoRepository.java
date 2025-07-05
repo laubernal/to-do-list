@@ -7,7 +7,9 @@ import java.util.UUID;
 import com.example.to_do_list.domain.entity.Todo;
 
 public interface TodoRepository {
-    Optional<Todo> findOne(UUID id);
+    Optional<Todo> findOneById(UUID id);
+
+    Optional<Todo> findOneByTitle(String title);
 
     List<Todo> findAll();
 
