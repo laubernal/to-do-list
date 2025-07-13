@@ -1,4 +1,4 @@
-package com.example.to_do_list.infrastructure.controller.saveTodo;
+package com.example.to_do_list.infrastructure.controllers.saveTodo;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
