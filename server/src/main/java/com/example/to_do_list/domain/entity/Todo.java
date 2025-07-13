@@ -10,12 +10,12 @@ public class Todo {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public Todo(UUID id, String title) {
+    public Todo(UUID id, String title, boolean completed, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.title = title;
-        this.completed = false;
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
+        this.completed = completed;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public UUID id() {

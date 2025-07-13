@@ -1,25 +1,26 @@
 package com.example.to_do_list.application.saveTodo;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
 import com.example.to_do_list.domain.entity.Todo;
-import com.example.to_do_list.domain.repository.TodoRepository;
-import com.example.to_do_list.infrastructure.controller.saveTodo.saveTodoRequestDto;
+import com.example.to_do_list.domain.repository.ITodoRepository;
+import com.example.to_do_list.infrastructure.controllers.saveTodo.saveTodoRequestDto;
 
 @Service("saveTodoHandler")
 public class SaveTodoHandler {
-    private final TodoRepository todoRepository;
+    private final ITodoRepository todoRepository;
 
-    public SaveTodoHandler(TodoRepository todoRepository) {
+    public SaveTodoHandler(ITodoRepository todoRepository) {
         this.todoRepository = todoRepository;
     }
 
     public void execute(saveTodoRequestDto todo) {
         this.ensureTodoNotExistsAlready(todo);
 
-        Todo todoEntity = new Todo(todo.id(), todo.title());
+        Todo todoEntity = new Todo(todo.id(), todo.title(), false, LocalDateTime.now(), LocalDateTime.now());
 
         todoRepository.save(todoEntity);
     }
