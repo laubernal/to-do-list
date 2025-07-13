@@ -9,15 +9,18 @@ import jakarta.persistence.Id;
 @Entity()
 public class TodoEntity {
     @Id
-    private final UUID id;
+    private UUID id;
 
-    private final String title;
+    private String title;
 
-    private final boolean completed;
+    private boolean completed;
 
-    private final LocalDateTime createdAt;
+    private LocalDateTime createdAt;
 
-    private final LocalDateTime updatedAt;
+    private LocalDateTime updatedAt;
+
+    protected TodoEntity() {
+    }
 
     public TodoEntity(UUID id, String title, boolean completed, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
