@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.example.to_do_list.domain.entity.Todo;
+import com.example.to_do_list.domain.exceptions.TodoAlreadyExistsException;
 import com.example.to_do_list.domain.repository.ITodoRepository;
 import com.example.to_do_list.infrastructure.controllers.saveTodo.saveTodoRequestDto;
 
@@ -29,7 +30,7 @@ public class SaveTodoHandler {
         Optional<Todo> result = todoRepository.findOneByTitle(todo.title());
 
         if (result.isPresent()) {
-            throw new Error("Todo already exists");
+            throw new TodoAlreadyExistsException();
         }
     }
 }
