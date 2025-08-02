@@ -33,7 +33,7 @@ public class GetTodoController {
             Map<String, Object> body = new HashMap<>();
 
             body.put("data", response);
-            body.put("message", "Todos retrieved successfully");
+            body.put("message", "Todo retrieved successfully");
             body.put("timestamp", LocalDateTime.now());
             body.put("status", HttpStatus.CREATED.value());
 
