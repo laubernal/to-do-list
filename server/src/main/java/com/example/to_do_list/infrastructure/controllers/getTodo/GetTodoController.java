@@ -26,7 +26,7 @@ public class GetTodoController {
     }
 
     @GetMapping
-    public ResponseEntity<?> getTodos(@PathVariable String id) {
+    public ResponseEntity<?> getTodo(@PathVariable String id) {
         try {
             TodoDTO response = this.getTodoHandler.execute(UUID.fromString(id));
 
